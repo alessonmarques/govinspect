@@ -17,10 +17,13 @@ trait TraitFundamentals {
         
         foreach($exploitedPath as $folder)
         {
+
             $scan = scandir($actualPath);
             array_shift($scan);array_shift($scan);
 
-            $actualPath .= $folder.'/';
+            $actualPath .= $folder . '/';
+
+            $folder = str_replace('\\', '', $folder);
 
             if(!in_array($folder, $scan))
             {

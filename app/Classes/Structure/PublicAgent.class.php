@@ -13,7 +13,7 @@ abstract class PublicAgent
 
     function __construct(string $sphereType, string $agentType)
     {
-        $this->pathToLocalData = (substr((__DIR__), 0, strpos((__DIR__), '/Support'))) . "/Extras/data/" . $sphereType . "/Agents/" . $agentType . "/";
+        $this->pathToLocalData = (substr((__DIR__), 0, strpos((__DIR__), '/Support'))) . '\/Extras/' . date('Y') . '\/data/' . $type . "\/Agents/" . $agentType . "/";
         $this->verifyPath($this->pathToLocalData);
     }
 
@@ -22,13 +22,13 @@ abstract class PublicAgent
         $name = $this->name;
         $updatedAt = $this->updatedAt;
 
-        $agentData       = compact('updatedAt');
+        $agentData = compact('updatedAt');
         return $agentData;
     }
 
     function __toString()
     {
-        $agentData       = $this->toArray();
+        $agentData = $this->toArray();
         return json_encode($agentData);
     }
 }

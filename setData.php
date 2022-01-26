@@ -11,10 +11,11 @@
     use \app\Classes\Government\Roles\Congressperson;
     new \app\Classes\Environment();
     
-    $congressperson = new Congressperson();
-    $congressperson->load('204400');
-    
+    $federalCongress = new FederalCongress();
     try{
+        
+        $federalCongress->getAgentsData();
+
         $return = ['msg' => 'updated'];
     } catch(Exception $e) {
         $return = ['msg' => 'error'];

@@ -13,6 +13,12 @@ class FederalCongress extends PublicSphere implements InterfacePublicSphere
 
     public function __construct()
     {
+        $this->domain       = "https://www.camara.leg.br/";
+        
         parent::__construct($this::PUBLIC_SPHERE_TYPE);
+    }
+
+    public function getAgentsData() {
+        print_r($this->domain);
     }
 }

@@ -13,12 +13,10 @@
     
     $federalCongress = new FederalCongress();
     try{
-        
-        $federalCongress->getAgentsData();
-
+        $federalCongress->downloadAgentsData();
         $return = ['msg' => 'updated'];
     } catch(Exception $e) {
         $return = ['msg' => 'error'];
     }
     
-    echo json_encode($return);
+    // echo json_encode($return);

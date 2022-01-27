@@ -9,7 +9,7 @@ abstract class PublicAgent
 {
     use TraitFundamentals;
     
-    protected  $pathToLocalData;
+    protected $pathToLocalData;
 
     function __construct(string $sphereType, string $agentType)
     {

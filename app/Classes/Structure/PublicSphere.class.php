@@ -18,7 +18,7 @@ abstract class PublicSphere
 
     function __construct($type)
     {
-        $this->pathToLocalData    = (substr((__DIR__), 0, strpos((__DIR__), '/Support'))) . '\/Extras/' . date('Y') . '\/data/' . $type . "/";
+        $this->pathToLocalData    = (substr((__DIR__), 0, strpos((__DIR__), '/Support'))) . '/Extras/' . date('Y') . '/data/' . $type . "/";
         $this->verifyPath($this->pathToLocalData);
 
         $this->type         = $type;
@@ -45,7 +45,7 @@ abstract class PublicSphere
         if (file_exists($fileName)) {
             $loadedData = json_decode(file($fileName)[0]);
             if (isset($loadedData) && !empty($loadedData)) {
-                $this->lastUpdate = isset($loadedData->lastUpdate) && !empty($loadedData->lastUpdate) ? $loadedData->lastUpdate : null;
+                $this->lastUpdate = isset($loadedData->lastUpdate) && !empty($loadedData->lastUpdate) ? $loadedData->lastUpdate : NULL;
             }
         }
     }

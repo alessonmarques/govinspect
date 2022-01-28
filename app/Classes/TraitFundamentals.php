@@ -2,6 +2,8 @@
 
 namespace app\Classes;
 
+use \Goutte\Client;
+
 trait TraitFundamentals {
    
     function verifyPath($path)
@@ -45,5 +47,12 @@ trait TraitFundamentals {
     function trim_array (&$value, $key) {
         $value = trim($value);
     }
+
+    function getData(string $url) {
+        $httpClient = new Client();
+        $crawler = $httpClient->request('GET', $url);
+        return $crawler;
+    }
+
     
 }

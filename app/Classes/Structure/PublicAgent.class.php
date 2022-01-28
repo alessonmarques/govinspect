@@ -13,7 +13,7 @@ abstract class PublicAgent
 
     function __construct(string $sphereType, string $agentType)
     {
-        $this->pathToLocalData = (substr((__DIR__), 0, strpos((__DIR__), '/Support'))) . '\/Extras/' . date('Y') . '\/data/' . $type . "\/Agents/" . $agentType . "/";
+        $this->pathToLocalData = (substr((__DIR__), 0, strpos((__DIR__), '/Support'))) . '/Extras/' . date('Y') . '/data/' . $sphereType . "/Agents/" . $agentType . "/";
         $this->verifyPath($this->pathToLocalData);
     }
 

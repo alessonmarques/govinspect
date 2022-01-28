@@ -13,7 +13,7 @@
     
     $federalCongress = new FederalCongress();
     try{
-        $federalCongress->downloadAgentsData();
+        $federalCongress->loadAgentsData();
         $return = ['msg' => 'updated'];
     } catch(Exception $e) {
         $return = ['msg' => 'error'];

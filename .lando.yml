@@ -1,0 +1,4 @@
+name: govinspect
+recipe: symfony
+config:
+  webroot: public

@@ -4,3 +4,26 @@ config:
   webroot: public
   php: '8.2'
   xdebug: true
+
+services:
+  appserver:
+    build:
+      - cp ./scripts/local/pre-commit .git/hooks/
+      - chmod +x .git/hooks/pre-commit
+
+tooling:
+  symfony:
+    service: appserver
+    cmd: php bin/console
+  phpstan:
+    service: appserver
+    cmd: phpstan analyse -l 0 src tests
+  phpcs:
+    service: appserver
+    cmd: phpcs
+  phpcbf:
+    service: appserver
+    cmd: phpcbf
+  test:
+    service: appserver
+    cmd: "php -d xdebug.remote_port=9003 vendor/bin/phpunit -c /app/phpunit.xml.dist"

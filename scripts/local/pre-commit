@@ -1,0 +1,18 @@
+#!/bin/sh
+RED='\033[0;31m'
+CYAN='\033[1;36m'
+NC='\033[0m' # No Color
+ERROR_MESSAGE="${RED}Error! fix it before commit!${NC}\n\n\n";
+
+echo "${CYAN}Running PHPStan!${NC}";
+if !(lando phpstan) ; then
+ echo "${ERROR_MESSAGE}";
+ exit 1;
+fi
+
+echo "${CYAN}Running PHPCs!${NC}";
+if !(lando phpcs) ; then
+ echo "${ERROR_MESSAGE}";
+ exit 1;
+fi
+

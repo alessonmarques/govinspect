@@ -4,3 +4,7 @@ config:
   webroot: public
   php: '8.2'
   xdebug: true
+tooling:
+  symfony:
+    service: appserver
+    cmd: php bin/console

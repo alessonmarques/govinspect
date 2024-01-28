@@ -2,5 +2,5 @@ name: govinspect
 recipe: symfony
 config:
   webroot: public
-  php: '8.0'
+  php: '8.2'
   xdebug: true

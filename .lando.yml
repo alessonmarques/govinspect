@@ -10,6 +10,10 @@ services:
     build:
       - cp ./scripts/local/pre-commit .git/hooks/
       - chmod +x .git/hooks/pre-commit
+  php-my-admin:
+    type: phpmyadmin
+    hosts:
+      - database
 
 tooling:
   symfony:

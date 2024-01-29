@@ -14,8 +14,8 @@ class TestController extends AbstractController
     public function index(GetDeputados $getDeputados, GetDeputado $getDeputado): Response
     {
         // $t = $getDeputados->getList();
-        $t = $getDeputado->get(10);
-        dd($t);
+        // $t = $getDeputado->get(10);
+        // dd($t);
 
         return $this->render('test/index.html.twig', [
             'controller_name' => 'TestController',
